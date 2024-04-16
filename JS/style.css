@@ -1,0 +1,26 @@
+body {
+  background-image: url("edited.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Set the container height to the full viewport height */
+}
+
+input {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  width: 300px;
+  height: 50px;
+}
