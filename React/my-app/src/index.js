@@ -2,23 +2,27 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-const firstBook = {
-  img: "./images/book1.jpg",
-  title: "Atomic Habits",
-  author: "James Clear",
-};
-
-const secondBook = {
-  img: "./images/book2.jpg",
-  title: "The Housemaid Paperback",
-  author: "Freida McFadden",
-};
+const books = [
+  {
+    img: "./images/book1.jpg",
+    title: "Atomic Habits",
+    author: "James Clear",
+    id: 1,
+  },
+  {
+    img: "./images/book2.jpg",
+    title: "The Housemaid Paperback",
+    author: "Freida McFadden",
+    id: 2,
+  },
+];
 
 function BookList() {
   return (
     <section className="bookList">
-      <Book author={firstBook.author} title={firstBook.title} img={firstBook.img} />
-      <Book author={secondBook.author} title={secondBook.title} img={secondBook.img} />
+      {books.map(({ img, title, author, id }) => {
+        return <Book img={img} title={title} author={author} key={id} />;
+      })}
     </section>
   );
 }
