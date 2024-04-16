@@ -10,7 +10,7 @@ body {
   background: #94caf3;
   color: #222;
 }
-.booklist {
+.bookList {
   width: 90vw;
   max-width: 1170px;
   margin: 5rem auto;
@@ -19,7 +19,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .booklist {
+  .bookList {
     grid-template-columns: repeat(3, 1fr);
   }
 }

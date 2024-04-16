@@ -4,7 +4,7 @@ import "./index.css";
 
 const firstBook = {
   img: "./images/book1.jpg",
-  title: "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+  title: "Atomic Habits",
   author: "James Clear",
 };
 
@@ -16,7 +16,7 @@ const secondBook = {
 
 function BookList() {
   return (
-    <section className="booklist">
+    <section className="bookList">
       <Book author={firstBook.author} title={firstBook.title} img={firstBook.img} />
       <Book author={secondBook.author} title={secondBook.title} img={secondBook.img} />
     </section>
