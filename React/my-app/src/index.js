@@ -75,6 +75,7 @@ const EventExample = () => {
     console.log("handle_Button");
   };
   const handleSubmit = (e) => {
+    e.preventDefault();
     console.log("handle_Submit");
   };
   return (
