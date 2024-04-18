@@ -20,6 +20,7 @@ const books = [
 function BookList() {
   return (
     <section className="bookList">
+      <HomeButton />
       <EventExample />
       {books.map((book) => {
         return <Book {...book} key={book} />;
@@ -27,7 +28,28 @@ function BookList() {
     </section>
   );
 }
-
+const HomeButton = () => {
+  return (
+    <a href="http://localhost:3000/">
+      <button
+        style={{
+          textDecoration: "none",
+          margin: "5px",
+          padding: "5px",
+          borderRadius: "5px",
+          border: "2px solid black",
+          backgroundColor: "grey",
+          fontSize: "20px",
+          fontWeight: "bold",
+          textAlign: "center",
+          width: "100%",
+          height: "50px",
+        }}>
+        Home
+      </button>
+    </a>
+  );
+};
 const EventExample = () => {
   const handleStyle = {
     margin: "5px",
@@ -43,24 +65,26 @@ const EventExample = () => {
     width: "300px",
     height: "50px",
   };
-  const handleInput = () => {
-    console.log("handle_Input_LOG");
+  const handleInput = (e) => {
+    console.log(e.target);
+    console.log(e.target.value);
+    console.log(e.target.name);
+    console.log("handle_Input");
   };
   const handleButton = () => {
-    console.log("handle_Button_LOG");
+    console.log("handle_Button");
+  };
+  const handleSubmit = (e) => {
+    console.log("handle_Submit");
   };
   return (
     <div>
-      <form>
-        <h1>Hello</h1>
-        <input
-          type="text"
-          name="inputName"
-          placeholder="Enter your name"
-          style={{ handleStyle }}
-          onChange={handleInput}
-        />
-
+      <form onSubmit={handleSubmit}>
+        <h1 style={{ display: "inline", margin: "5px", padding: "5px" }}>Form</h1>
+        <input type="text" name="inputName" placeholder="Enter your name" onChange={handleInput} />
+        <button type="submit" style={handleStyle}>
+          Submit
+        </button>
         <button type="button" style={handleStyle} onClick={handleButton}>
           ClickMe
         </button>
