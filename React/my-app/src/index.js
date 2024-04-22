@@ -94,6 +94,9 @@ const Book = (props) => {
       <img src={img} alt={title} />
       <h2>{title}</h2>
       <h4>{author}</h4>
+      <button type="button" onClick={() => console.log(title)}>
+        Show Title
+      </button>
     </article>
   );
 };
