@@ -71,21 +71,15 @@ const EventExample = () => {
     console.log(e.target.name);
     console.log("handle_Input");
   };
-  const handleButton = () => {
-    console.log("handle_Button");
-  };
-  const handleSubmit = () => {
-    console.log("handle_Submit");
-  };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={() => console.log("handle_Submit")}>
         <h1 style={{ display: "inline", margin: "5px", padding: "5px" }}>Form</h1>
         <input type="text" name="inputName" placeholder="Enter your name" onChange={handleInput} />
         <button type="submit" style={handleStyle}>
           Submit
         </button>
-        <button type="button" style={handleStyle} onClick={handleButton}>
+        <button type="button" style={handleStyle} onClick={() => console.log("handle_Button")}>
           ClickMe
         </button>
       </form>
