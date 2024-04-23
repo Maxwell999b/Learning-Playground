@@ -18,12 +18,16 @@ const books = [
 ];
 
 function BookList() {
+  const valueOfTestVar = "testVarFuncCall";
+  const valueOfTestFunc = () => {
+    console.log(valueOfTestVar);
+  };
   return (
     <section className="bookList">
       <HomeButton />
       <EventExample />
       {books.map((book) => {
-        return <Book {...book} key={book} />;
+        return <Book {...book} key={book} valueOfTest={valueOfTestFunc} />;
       })}
     </section>
   );
@@ -88,13 +92,14 @@ const EventExample = () => {
 };
 
 const Book = (props) => {
-  const { img, title, author } = props;
+  const { img, title, author, valueOfTest } = props;
+  console.log(props);
   return (
     <article className="book">
       <img src={img} alt={title} />
       <h2>{title}</h2>
       <h4>{author}</h4>
-      <button type="button" onClick={() => console.log(title)}>
+      <button type="button" onClick={valueOfTest}>
         Show Title
       </button>
     </article>
