@@ -5,15 +5,11 @@ import HomeButton from "./Home";
 import Book from "./Book";
 import { books } from "./books";
 function BookList() {
-  const getBooks = (id) => {
-    const book = books.find((book) => book.id === id);
-    console.log(book);
-  };
   return (
     <section className="bookList">
       <HomeButton />
       {books.map((book) => {
-        return <Book {...book} key={book.id} getBooks={getBooks} />;
+        return <Book {...book} key={book.id} />;
       })}
     </section>
   );
