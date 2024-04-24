@@ -1,110 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-
-const books = [
-  {
-    img: "./images/book1.jpg",
-    title: "Atomic Habits",
-    author: "James Clear",
-    id: 1,
-  },
-  {
-    img: "./images/book2.jpg",
-    title: "The Housemaid Paperback",
-    author: "Freida McFadden",
-    id: 2,
-  },
-];
-
+import HomeButton from "./Home";
+import Book from "./Book";
+import { books } from "./books";
 function BookList() {
-  const valueOfTestVar = "testVarFuncCall";
-  const valueOfTestFunc = () => {
-    console.log(valueOfTestVar);
+  const getBooks = (id) => {
+    const book = books.find((book) => book.id === id);
+    console.log(book);
   };
   return (
     <section className="bookList">
       <HomeButton />
-      <EventExample />
       {books.map((book) => {
-        return <Book {...book} key={book} valueOfTest={valueOfTestFunc} />;
+        return <Book {...book} key={book.id} getBooks={getBooks} />;
       })}
     </section>
   );
 }
-const HomeButton = () => {
-  return (
-    <a href="http://localhost:3000/">
-      <button
-        style={{
-          textDecoration: "none",
-          margin: "5px",
-          padding: "5px",
-          borderRadius: "5px",
-          border: "2px solid black",
-          backgroundColor: "grey",
-          fontSize: "20px",
-          fontWeight: "bold",
-          textAlign: "center",
-          width: "100%",
-          height: "50px",
-        }}>
-        Home
-      </button>
-    </a>
-  );
-};
-const EventExample = () => {
-  const handleStyle = {
-    margin: "5px",
-    padding: "5px",
-    borderRadius: "5px",
-    border: "2px solid black",
-    backgroundColor: "white",
-    color: "black",
-    fontSize: "20px",
-    fontWeight: "bold",
-    textAlign: "center",
-    textDecoration: "none",
-    width: "300px",
-    height: "50px",
-  };
-  const handleInput = (e) => {
-    console.log(e.target);
-    console.log(e.target.value);
-    console.log(e.target.name);
-    console.log("handle_Input");
-  };
-  return (
-    <div>
-      <form onSubmit={() => console.log("handle_Submit")}>
-        <h1 style={{ display: "inline", margin: "5px", padding: "5px" }}>Form</h1>
-        <input type="text" name="inputName" placeholder="Enter your name" onChange={handleInput} />
-        <button type="submit" style={handleStyle}>
-          Submit
-        </button>
-        <button type="button" style={handleStyle} onClick={() => console.log("handle_Button")}>
-          ClickMe
-        </button>
-      </form>
-    </div>
-  );
-};
-
-const Book = (props) => {
-  const { img, title, author, valueOfTest } = props;
-  console.log(props);
-  return (
-    <article className="book">
-      <img src={img} alt={title} />
-      <h2>{title}</h2>
-      <h4>{author}</h4>
-      <button type="button" onClick={valueOfTest}>
-        Show Title
-      </button>
-    </article>
-  );
-};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<BookList />);
