@@ -9,12 +9,15 @@ import { books } from "./books";
 
 function BookList() {
   return (
-    <section className="bookList">
-      <HomeButton />
-      {books.map((book) => {
-        return <Book {...book} key={book.id} />;
-      })}
-    </section>
+    <>
+      <h1 className="titleHeader">amazon best sellers</h1>
+      <section className="bookList">
+        <HomeButton />
+        {books.map((book, index) => {
+          return <Book {...book} key={book.id} number={index} />;
+        })}
+      </section>
+    </>
   );
 }
 
