@@ -1,5 +1,5 @@
-import Starter from "./tutorial/01-useState/starter/01-error-example.jsx";
-import Final from "./tutorial/01-useState/final/01-error-example.jsx";
+import Starter from "./tutorial/01-useState/starter/02-useState-basics.jsx";
+import Final from "./tutorial/01-useState/final/02-useState-basics.jsx";
 function App() {
   return (
     <div className="container">
