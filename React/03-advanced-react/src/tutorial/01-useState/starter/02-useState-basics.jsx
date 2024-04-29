@@ -3,7 +3,7 @@ const UseStateBasics = () => {
   const [counter, setCounter] = useState(0);
   const handleCounter = () => {
     setCounter(counter + 1);
-    console.log(counter + 1);
+    // console.log(counter + 1);
   };
   return (
     <div>
