@@ -1,17 +1,28 @@
-import { useState } from "react";
+import React, { useState } from "react";
+
 const UseStateObject = () => {
-  const [person, setPerson] = useState({ name: "Max", age: 21, hobby: "read books" });
-  const UpdateStateObject = () => {
-    setPerson({ name: "john", age: 28, hobby: "scream at the computer" });
+  const initialPeople = [
+    { name: "Max", age: 27, hobby: "read books" },
+    { name: "John", age: 30, hobby: "play guitar" },
+    { name: "Alice", age: 25, hobby: "painting" },
+  ];
+
+  const [personIndex, setPersonIndex] = useState(0);
+  const [person, setPerson] = useState(initialPeople[personIndex]);
+
+  const updatePerson = () => {
+    const nextIndex = (personIndex + 1) % initialPeople.length;
+    setPersonIndex(nextIndex);
+    setPerson(initialPeople[nextIndex]);
   };
+
   return (
     <div>
-      <h1>{person.name}</h1>
-      <h2>{person.age}</h2>
-      <h3>{person.hobby}</h3>
-      <button type="button" onClick={UpdateStateObject} className="btn">
-        change state
-      </button>
+      <h2>useState object example</h2>
+      <p>Name: {person.name}</p>
+      <p>Age: {person.age}</p>
+      <p>Hobby: {person.hobby}</p>
+      <button onClick={updatePerson}>Next Person</button>
     </div>
   );
 };
