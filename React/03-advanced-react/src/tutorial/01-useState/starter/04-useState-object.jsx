@@ -1,28 +1,24 @@
 import React, { useState } from "react";
 
 const UseStateObject = () => {
-  const initialPeople = [
-    { name: "Max", age: 27, hobby: "read books" },
-    { name: "John", age: 30, hobby: "play guitar" },
-    { name: "Alice", age: 25, hobby: "painting" },
-  ];
+  const [person, setPerson] = useState({ name: "Max", age: 21, hobby: "read books" });
 
-  const [personIndex, setPersonIndex] = useState(0);
-  const [person, setPerson] = useState(initialPeople[personIndex]);
-
-  const updatePerson = () => {
-    const nextIndex = (personIndex + 1) % initialPeople.length;
-    setPersonIndex(nextIndex);
-    setPerson(initialPeople[nextIndex]);
+  const UpdateStateObject = () => {
+    if (person.name === "Max") {
+      setPerson({ name: "John", age: 28, hobby: "scream at the computer" });
+    } else {
+      setPerson({ name: "Max", age: 21, hobby: "read books" });
+    }
   };
 
   return (
     <div>
-      <h2>useState object example</h2>
-      <p>Name: {person.name}</p>
-      <p>Age: {person.age}</p>
-      <p>Hobby: {person.hobby}</p>
-      <button onClick={updatePerson}>Next Person</button>
+      <h1>{person.name}</h1>
+      <h2>{person.age}</h2>
+      <h3>{person.hobby}</h3>
+      <button type="button" onClick={UpdateStateObject} className="btn">
+        Change State
+      </button>
     </div>
   );
 };
