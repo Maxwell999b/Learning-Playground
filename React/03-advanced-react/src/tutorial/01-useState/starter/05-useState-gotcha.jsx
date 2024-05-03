@@ -1,5 +1,18 @@
+import { useState } from "react";
 const UseStateGotcha = () => {
-  return <h2>useState "gotcha"</h2>;
+  const [value, setValue] = useState(0);
+  const updateValue = () => {
+    setValue(value + 1);
+    console.log(value);
+  };
+  return (
+    <>
+      <h2>{value}</h2>
+      <button type="button" onClick={updateValue} className="btn">
+        update Number
+      </button>
+    </>
+  );
 };
 
 export default UseStateGotcha;

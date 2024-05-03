@@ -1,23 +1,20 @@
-import React, { useState } from "react";
-
+import { useState } from "react";
 const UseStateObject = () => {
-  const [person, setPerson] = useState({ name: "Max", age: 21, hobby: "read books" });
-
+  const [name, setName] = useState("Max");
+  const [age, setAge] = useState(21);
+  const [hobby, setHobby] = useState("read books");
   const UpdateStateObject = () => {
-    if (person.name === "Max") {
-      setPerson({ name: "John", age: 28, hobby: "scream at the computer" });
-    } else {
-      setPerson({ name: "Max", age: 21, hobby: "read books" });
-    }
+    setName("John");
+    setAge(28);
+    setHobby("scream at the computer");
   };
-
   return (
     <div>
-      <h1>{person.name}</h1>
-      <h2>{person.age}</h2>
-      <h3>{person.hobby}</h3>
+      <h1>{name}</h1>
+      <h2>{age}</h2>
+      <h3>{hobby}</h3>
       <button type="button" onClick={UpdateStateObject} className="btn">
-        Change State
+        change state
       </button>
     </div>
   );
