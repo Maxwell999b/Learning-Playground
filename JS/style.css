@@ -5,9 +5,10 @@ body {
 }
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Set the container height to the full viewport height */
+  height: 100vh;
 }
 
 input {
@@ -32,4 +33,18 @@ input {
   font-size: 20px;
   font-weight: bold;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 2px 2px 0 black;
+}
+.btn {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid rgb(221, 221, 221);
+  background-color: rgb(37, 37, 37);
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  width: 320px;
+  height: 50px;
 }
