@@ -9,6 +9,8 @@ const UseStateObject = () => {
       age: 28,
       hobby: "Screaming At The Computer",
     });
+    // setPerson({ ...person, name: "Max" });
+    // setPerson({ name: "Max" });
   };
   return (
     <>
