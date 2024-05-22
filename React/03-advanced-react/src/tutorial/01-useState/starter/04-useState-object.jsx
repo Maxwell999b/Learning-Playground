@@ -1,20 +1,21 @@
 import { useState } from "react";
+
 const UseStateObject = () => {
-  const [name, setName] = useState("Max");
-  const [age, setAge] = useState(21);
-  const [hobby, setHobby] = useState("read books");
-  const UpdateStateObject = () => {
+  let [name, setName] = useState("Peter");
+  const [age, setAge] = useState(24);
+  const [hobby, setHobby] = useState("Read Books");
+  const handleButton = () => {
     setName("John");
     setAge(28);
-    setHobby("scream at the computer");
+    setHobby("Screaming At The Computer");
   };
   return (
     <div>
       <h1>{name}</h1>
       <h2>{age}</h2>
-      <h3>{hobby}</h3>
-      <button type="button" onClick={UpdateStateObject} className="btn">
-        change state
+      <h4>{hobby}</h4>
+      <button className="btn" onClick={handleButton}>
+        Change the Data
       </button>
     </div>
   );
