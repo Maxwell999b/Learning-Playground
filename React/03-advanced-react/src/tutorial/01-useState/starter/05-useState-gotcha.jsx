@@ -7,7 +7,7 @@ const UseStateGotcha = () => {
         console.log(currentValue);
         return currentValue + 1;
       });
-    }, 500);
+    }, 3000);
   };
   const logCurrentValue = () => {
     console.log(value); // Log the updated value
