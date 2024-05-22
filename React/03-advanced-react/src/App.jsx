@@ -1,5 +1,5 @@
-import Starter from "./tutorial/02-useEffect/starter/04-fetch-data.jsx";
-import Final from "./tutorial/02-useEffect/final/04-fetch-data.jsx";
+import Starter from "./tutorial/01-useState/starter/02-useState-basics.jsx";
+import Final from "./tutorial/01-useState/final/02-useState-basics.jsx";
 function App() {
   return (
     <div className="container">
