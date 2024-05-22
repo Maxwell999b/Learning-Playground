@@ -4,6 +4,7 @@ const CodeExample = () => {
   const [value, setValue] = useState(0);
   const RandomLog = () => {
     console.log("Hello There");
+    setValue(value + 1);
   };
   RandomLog();
   return (
