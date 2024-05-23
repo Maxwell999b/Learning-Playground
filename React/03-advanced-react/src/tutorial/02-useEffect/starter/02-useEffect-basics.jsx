@@ -9,7 +9,7 @@ const UseEffectBasics = () => {
   sayHello();
   useEffect(() => {
     console.log("Hello from useEffect");
-  });
+  }, []);
   return (
     <div>
       <h1>value : {value}</h1>
