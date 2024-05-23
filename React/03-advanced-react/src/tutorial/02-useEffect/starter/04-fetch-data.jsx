@@ -1,42 +1,42 @@
 import { useState, useEffect } from "react";
-
 const url = "https://api.github.com/users";
 
 const FetchData = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    const fetchingFunc = async () => {
+    const fetching = async () => {
       try {
         const resp = await fetch(url);
         if (!resp.ok) {
-          const msg = `Try Block : ${resp.status}  ${resp.statusText} `;
+          const msg = console.log(`OK ERROR : ${resp.status}`);
           throw new Error(msg);
         }
         const data = await resp.json();
         setUsers(data);
       } catch (error) {
-        console.log(`Error from the Catch Block : ${error}`);
+        console.log(`Error Block : ${error}`);
       }
     };
-    fetchingFunc();
+    fetching();
   }, []);
   return (
     <>
-      <h3>github users</h3>
+      <h1>Github Users</h1>
       <ul className="users">
         {users.map((user) => {
-          const { id, login, avatar_url, html_url } = user;
+          const { id, login, html_url, avatar_url } = user;
           return (
             <li key={id}>
               <img src={avatar_url} alt={login} />
               <div>
-                <h5>{login}</h5>
+                <h3>{login}</h3>
                 <a href={html_url}>Profile</a>
               </div>
             </li>
           );
         })}
       </ul>
+      <button className="btn">Testing</button>
     </>
   );
 };
