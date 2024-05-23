@@ -1,57 +1,41 @@
-// 13-callback-function
-// https://youtu.be/GWq0XETTOTk?list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ
+//  Javascript Nuggets
+// fetch-api
+// https://youtu.be/C_VIKzfpRrg?list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ
 
-// let weather;
-// console.log(weather);
-getWeather(weatherReceived);
-getWeather(displayIcon);
-// document.body.innerText = weather;
-function displayIcon(data) {
-  let icon;
-  if (data === "sunny") {
-    icon = "☀️";
-  } else if (data === "cloudy") {
-    icon = "☁️";
+const url = "https://www.course-api.com/react-tours-project";
+
+// console.log(fetch(url));
+
+// fetch(url)
+//   .then((response) => response.json())
+//   .then((data) => console.log(data))
+//   .catch((error) => console.log(error));
+
+// const fetching = async () => {
+//   try {
+//     const resp = await fetch(url);
+//     const data = await resp.json();
+//     console.log(data);
+//   } catch (error) {
+//     console.log(`Error from the Catch Block : ${error}`);
+//   }
+// };
+// fetching();
+
+const fetching = async () => {
+  try {
+    const resp = await fetch(url);
+    if (!resp.ok) {
+      const msg = `Try Block : ${resp.status}  ${resp.statusText} `;
+      throw new Error(msg);
+    }
+
+    const data = await resp.json();
+    console.log(data);
+  } catch (error) {
+    console.log(`Error from the Catch Block : ${error}`);
   }
-  document.querySelector(".my-input-result").value = "Weather: " + data + icon;
-}
+};
 
-function weatherReceived(data) {
-  let weather = data;
-  displayIcon(weather);
-}
-
-function getWeather(callback) {
-  setTimeout(() => {
-    callback("sunny");
-  });
-}
-
-getWeather(weatherReceived);
-
-// function getWeather() {
-//   setTimeout(() => {
-//     weather = "sunny";
-//     document.body.innerText = weather;
-//   });
-// }
-
-// function getWeather() {
-//   return "sunny";
-// }
-
-// function getWeather() {
-//   setTimeout(() => {
-//     return "sunny"
-//   })
-// }
-
-// const btn = document.getElementsByClassName("btn")[0];
-// btn.addEventListener("click", function () {
-//   console.log("Hello World");
-// });
-
-// const btn = document.querySelector(".btn");
-// btn.addEventListener("click", function () {
-//   console.log("Hello World");
-// });
+const btn = document.querySelector(".btn");
+btn.addEventListener("click", fetching);
