@@ -4,20 +4,21 @@ const url = "https://api.github.com/users";
 const FetchData = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    const FetchingFunc = async () => {
+    const fetchFunc = async () => {
       try {
         const resp = await fetch(url);
         if (!resp.ok) {
-          const msg = console.log(`OK_ERROR : ${resp.status} + ${resp.statusText}`);
+          const msg = `OK_ERROR : ${resp.status} + ${resp.statusText}`;
           throw new Error(msg);
         }
         const data = await resp.json();
+        // console.log(data);
         setUsers(data);
       } catch (error) {
         console.log(`CATCH_ERROR : ${error}`);
       }
     };
-    FetchingFunc();
+    fetchFunc();
   }, []);
   return (
     <>
@@ -29,7 +30,7 @@ const FetchData = () => {
             <li key={id}>
               <img src={avatar_url} alt={login} />
               <div>
-                <h3>{login}</h3>
+                <h5>{login}</h5>
                 <a href={html_url}>Profile</a>
               </div>
             </li>
