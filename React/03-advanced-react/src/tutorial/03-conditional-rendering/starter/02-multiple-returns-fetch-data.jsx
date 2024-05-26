@@ -6,6 +6,8 @@ const MultipleReturnsFetchData = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [user, setUser] = useState(null);
+  // here we will get an error As well
+  // const { avatar_url, name, company, bio } = user;
 
   useEffect(() => {
     const Fetching = async () => {
@@ -29,18 +31,23 @@ const MultipleReturnsFetchData = () => {
     };
     Fetching();
   }, []);
+  // here we will get an error As well
+  // const { avatar_url, name, company, bio } = user;
+
   if (isLoading) {
     return <h2>Loading...</h2>;
   }
   if (isError) {
     return <h2>There was an error...</h2>;
   }
+  const { avatar_url, name, company, bio } = user;
+
   return (
     <div>
-      <img style={{ width: "250px", borderRadius: "25px" }} src={user.avatar_url} alt={user.name} />
-      <h1>{user.name}</h1>
-      <h3>Work At {user.company}</h3>
-      <h4>{user.bio}</h4>
+      <img style={{ width: "250px", borderRadius: "25px" }} src={avatar_url} alt={name} />
+      <h1>{name}</h1>
+      <h3>Work At {company}</h3>
+      <h4>{bio}</h4>
     </div>
   );
 };
