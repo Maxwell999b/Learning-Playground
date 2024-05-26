@@ -15,15 +15,15 @@ const UserChallenge = () => {
     <div>
       {user ? (
         <div>
-          <h1>Hello there {user.name}</h1>
-          <button className="btn" onClick={() => login()}>
+          <h3>Hello there, {user.name}</h3>
+          <button className="btn" onClick={() => logout()}>
             Logout
           </button>
         </div>
       ) : (
         <div>
-          <h4>Please Login</h4>
-          <button className="btn" onClick={() => logout()}>
+          <h3>Please Login</h3>
+          <button className="btn" onClick={() => login()}>
             Login
           </button>
         </div>
