@@ -1,28 +1,24 @@
 import { useState } from "react";
 const ToggleChallenge = () => {
-  const [showAlert, setShowAlert] = useState(false);
-  const ToggleAlert = () => {
+  const [showAlert, setShowAlert] = useState(0);
+  const ToggleButton = () => {
     if (showAlert) {
-      setShowAlert(false);
+      setShowAlert(0);
       return;
     }
-    setShowAlert(true);
+    setShowAlert(1);
   };
   return (
     <div>
-      <button
-        className="btn"
-        onClick={() => {
-          ToggleAlert();
-        }}>
+      <button className="btn" onClick={() => ToggleButton()}>
         Show Alert
       </button>
-      {showAlert && <Alert />}
+      {showAlert === 1 && <Alert />}
     </div>
   );
 };
 const Alert = () => {
-  return <div className="alert alert-danger">hello world</div>;
+  return <div className="alert alert-danger">This Alert </div>;
 };
 
 export default ToggleChallenge;
