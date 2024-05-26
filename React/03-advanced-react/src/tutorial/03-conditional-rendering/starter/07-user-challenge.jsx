@@ -3,7 +3,7 @@ import { useState } from "react";
 const UserChallenge = () => {
   const [user, setUser] = useState(null);
   function login() {
-    setUser({ name: "Maxwell999" });
+    setUser("Maxwell999");
   }
   function logout() {
     setUser(null);
@@ -15,7 +15,7 @@ const UserChallenge = () => {
     <div>
       {user ? (
         <div>
-          <h3>Hello there, {user.name}</h3>
+          <h3>Hello there, {user}</h3>
           <button className="btn" onClick={() => logout()}>
             Logout
           </button>
