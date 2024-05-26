@@ -9,7 +9,7 @@ const ToggleChallenge = () => {
       <button className="btn" onClick={() => ToggleButton()}>
         Show the Alert
       </button>
-      {showAlert === 1 && <Alert />}
+      {showAlert === 0 && <Alert />}
     </div>
   );
 };
