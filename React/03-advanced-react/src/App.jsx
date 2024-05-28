@@ -1,12 +1,8 @@
-import Navbar from "./tutorial/04-project-structure/starter/Navbar";
-import { Home, About } from "./tutorial/04-project-structure/starter/Pages";
-
+import ExampleComponent from "./tutorial/04-project-structure/starter/ExampleComponent";
 function App() {
   return (
     <div className="container">
-      <Navbar />
-      <Home />
-      <About />
+      <ExampleComponent />
     </div>
   );
 }
