@@ -1,22 +1,20 @@
 import { data } from "../../../data";
 import { useState } from "react";
+
 const UserChallenge = () => {
-  const [name, setName] = useState("");
   const [users, setUsers] = useState(data);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(name);
-    // console.log(data);
+  const [name, setName] = useState(" ");
+  const handleSubmit = (event) => {
+    event.preventDefault();
     if (!name) return;
-    const fakeId = Date.now();
-    console.log(fakeId);
-    const newUser = { id: fakeId, name: name };
-    setUsers([...users, newUser]);
+    const newId = Date.now();
+    const newUsers = { id: newId, name: name };
+    setUsers([...users, newUsers]);
     setName("");
   };
-  const handleRemove = (id) => {
-    const removeUser = users.filter((person) => person.id !== id);
-    setUsers(removeUser);
+  const removeUser = (id) => {
+    const selectUser = users.filter((person) => person.id !== id);
+    setUsers(selectUser);
   };
   return (
     <div>
@@ -26,7 +24,13 @@ const UserChallenge = () => {
           <label htmlFor="name" className="form-label">
             name
           </label>
-          <input type="text" className="form-input" id="name" value={name} onChange={(e) => setName(e.target.value)} />
+          <input
+            type="text"
+            className="form-input"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+            id="name"
+          />
         </div>
 
         <button type="submit" className="btn btn-block">
@@ -37,7 +41,7 @@ const UserChallenge = () => {
         return (
           <div key={id}>
             <h4>{name}</h4>
-            <button className="btn" onClick={() => handleRemove(id)}>
+            <button className="btn" onClick={() => removeUser(id)}>
               remove
             </button>
           </div>
