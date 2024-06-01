@@ -1,11 +1,10 @@
-import List from "./tutorial/05-leverage-javascript/starter/List.jsx";
-// import Person from "./tutorial/05-leverage-javascript/starter/Person.jsx";
-// import Final from "./tutorial/05-leverage-javascript/final/List";
+import Starter from "./tutorial/06-forms/starter/01-controlled-inputs.jsx";
+import Final from "./tutorial/06-forms/final/01-controlled-inputs.jsx";
 function App() {
   return (
     <div className="container">
-      <List />
-      {/* <Person /> */}
+      <Starter />
+      {/* <Final /> */}
     </div>
   );
 }
