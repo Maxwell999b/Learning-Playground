@@ -17,7 +17,12 @@ const MultipleInputs = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // console.log(user);
-    setSubmittedUser(user);
+    const submittedUserData = {
+      name: user.name || "N/A",
+      email: user.email || "N/A",
+      password: user.password || "N/A",
+    };
+    setSubmittedUser(submittedUserData);
   };
   return (
     <div>
