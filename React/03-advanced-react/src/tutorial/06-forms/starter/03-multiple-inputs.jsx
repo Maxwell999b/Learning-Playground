@@ -6,6 +6,8 @@ const MultipleInputs = () => {
     email: "",
     password: "",
   });
+  const [submittedUser, setSubmittedUser] = useState(null);
+
   const handleChange = (e) => {
     // console.log(e);
     // console.log(e.target.name);
@@ -14,7 +16,8 @@ const MultipleInputs = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(user);
+    // console.log(user);
+    setSubmittedUser(user);
   };
   return (
     <div>
@@ -67,6 +70,20 @@ const MultipleInputs = () => {
           submit
         </button>
       </form>
+      {submittedUser && (
+        <div>
+          <h4>Submitted Data</h4>
+          <p>
+            <strong>Name:</strong> {submittedUser.name}
+          </p>
+          <p>
+            <strong>Email:</strong> {submittedUser.email}
+          </p>
+          <p>
+            <strong>Password:</strong> {submittedUser.password}
+          </p>
+        </div>
+      )}
     </div>
   );
 };
