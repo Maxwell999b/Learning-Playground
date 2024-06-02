@@ -31,8 +31,6 @@ const OtherInputs = () => {
             Framework
           </label>
           <select name="framework" id="framework" value={framework} onChange={handleFramework}>
-            {framework}
-
             {frameworks.map((framework) => {
               return <option key={framework}>{framework}</option>;
             })}
