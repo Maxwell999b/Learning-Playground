@@ -1,8 +1,10 @@
 import useFetch from "./useFetch";
+import useFetchData from "./useFetchData";
 
 const url = "https://api.github.com/users/QuincyLarson";
 const FetchData = () => {
-  const { isLoading, isError, user } = useFetch(url);
+  // const { isLoading, isError, user } = useFetch(url);
+  const { isLoading, isError, data: user } = useFetchData(url);
   if (isLoading) {
     return <h2>Loading...</h2>;
   }
