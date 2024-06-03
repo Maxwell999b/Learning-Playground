@@ -1,4 +1,4 @@
-const UserContainer = ({ user, logout }) => {
+const UserContainer = ({ user, logout, login }) => {
   return (
     <div className="user-container">
       {user ? (
@@ -11,7 +11,9 @@ const UserContainer = ({ user, logout }) => {
       ) : (
         <>
           <p>Please Login</p>
-          <button className="btn">Login</button>
+          <button className="btn" onClick={login}>
+            Login
+          </button>
         </>
       )}
     </div>
