@@ -4,8 +4,8 @@ function App() {
   return (
     <div className="container">
       <Starter />
-      <br></br>
-      <Final />
+      {/* <br></br> */}
+      {/* <Final /> */}
     </div>
   );
 }
