@@ -1,10 +1,11 @@
-import Starter from "./tutorial/08-custom-hooks/starter/02-fetch-data.jsx";
-import Final from "./tutorial/08-custom-hooks/final/02-fetch-data.jsx";
+import Starter from "./tutorial/09-context-api/starter/Navbar.jsx";
+import Final from "./tutorial/09-context-api/final/context/Navbar.jsx";
 function App() {
   return (
     <div className="container">
       <Starter />
-      {/* <Final /> */}
+      <br></br>
+      <Final />
     </div>
   );
 }
