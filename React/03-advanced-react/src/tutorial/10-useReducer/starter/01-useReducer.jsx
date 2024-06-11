@@ -15,8 +15,12 @@ const reducer = (state, action) => {
   if (action.type == RESET_LIST) {
     return { ...state, people: data };
   }
+  if (action.type == REMOVE_ITEM) {
+    let newPeople = state.people.filter((person) => person.id !== action.payload.id);
+    return { ...state, people: newPeople };
+  }
   // return state;
-  throw new Error(`UNKNOWN_CONDITION "${(state, action)} <== State,Action"`);
+  throw new Error(`UNKNOWN_CONDITION "${action.type} no matching"`);
 };
 const ReducerBasics = () => {
   const [state, dispatch] = useReducer(reducer, defaultState);
@@ -24,6 +28,7 @@ const ReducerBasics = () => {
   const removeItem = (id) => {
     // let newPeople = people.filter((person) => person.id !== id);
     // setPeople(newPeople);
+    dispatch({ type: REMOVE_ITEM, payload: { id } });
   };
   const clearItems = () => {
     // setPeople([]);
