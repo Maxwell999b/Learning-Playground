@@ -16,6 +16,7 @@ const reducer = (state, action) => {
     return { ...state, people: data };
   }
   if (action.type == REMOVE_ITEM) {
+    // console.log(action);
     let newPeople = state.people.filter((person) => person.id !== action.payload.id);
     return { ...state, people: newPeople };
   }
