@@ -3,6 +3,7 @@ import { data, people } from "../../../data";
 
 const defaultState = {
   people: data,
+  // isLoading: true,
 };
 const CLEAR_LIST = "CLEAR_LIST";
 const RESET_LIST = "RESET_LIST";
