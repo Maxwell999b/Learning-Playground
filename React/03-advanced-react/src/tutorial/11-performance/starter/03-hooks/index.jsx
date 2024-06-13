@@ -1,6 +1,7 @@
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { data } from "../../../../data";
 import List from "./List";
+import slowFunction from "./SlowFunc";
 const LowerState = () => {
   const [people, setPeople] = useState(data);
   const [count, setCount] = useState(0);
@@ -11,6 +12,9 @@ const LowerState = () => {
     },
     [people]
   );
+
+  const randomValue = useMemo(() => slowFunction(), []);
+  console.log(randomValue);
 
   return (
     <section>
