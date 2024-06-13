@@ -20,32 +20,30 @@ const LatestReact = () => {
     });
   };
   return (
-    <section>
-      <form className="form">
-        <input type="text" className="form-input" value={text} onChange={handleChange} />
-      </form>
-      <h4>Items Below</h4>
-      {isPending ? (
-        <h4>is-Loading...</h4>
-      ) : (
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr 1fr",
-            marginTop: "2rem",
-          }}>
-          {items}
-        </div>
-      )}
-      <button className="btn" onClick={() => setShow(!show)}>
-        Toggle
-      </button>
-      {show && (
-        <Suspense fallback={<h4>We Working on it...</h4>}>
-          <SlowComponent />
-        </Suspense>
-      )}
-    </section>
+    <Suspense fallback={<h4>We Working on it...</h4>}>
+      <section>
+        <form className="form">
+          <input type="text" className="form-input" value={text} onChange={handleChange} />
+        </form>
+        <h4>Items Below</h4>
+        {isPending ? (
+          <h4>is-Loading...</h4>
+        ) : (
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr 1fr",
+              marginTop: "2rem",
+            }}>
+            {items}
+          </div>
+        )}
+        <button className="btn" onClick={() => setShow(!show)}>
+          Toggle
+        </button>
+        {show && <SlowComponent />}
+      </section>
+    </Suspense>
   );
 };
 export default LatestReact;
