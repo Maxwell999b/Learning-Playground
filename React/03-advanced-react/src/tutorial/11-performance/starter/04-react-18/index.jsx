@@ -1,7 +1,9 @@
-import { useState, useTransition } from "react";
+import { useState, useTransition, Suspense, lazy } from "react";
+const SlowComponent = lazy(() => import("./SlowComponent"));
 const LatestReact = () => {
   const [text, setText] = useState("");
   const [items, setItems] = useState([]);
+  const [show, setShow] = useState(false);
   const [isPending, startTransition] = useTransition();
   const handleChange = (e) => {
     setText(e.target.value);
@@ -34,6 +36,14 @@ const LatestReact = () => {
           }}>
           {items}
         </div>
+      )}
+      <button className="btn" onClick={() => setShow(!show)}>
+        Toggle
+      </button>
+      {show && (
+        <Suspense fallback={<h4>We Working on it...</h4>}>
+          <SlowComponent />
+        </Suspense>
       )}
     </section>
   );
