@@ -12,7 +12,7 @@ export default function Bio() {
       <span className="bio--intrests">
         <h2 className="bio--intrests__title">Intrests</h2>
         <p className="bio--intrests__descr">
-          Muslim. Games expert. The world of music. reader. Internet fanatic . Lover of calm JYM BRO. Coffee fanatic.
+          Muslim. Games expert. The world of music. reader. Internet fanatic. Lover of calm. JYM BRO. Coffee fanatic.
         </p>
       </span>
     </section>
