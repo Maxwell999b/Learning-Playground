@@ -30,12 +30,12 @@ fs.readFile("./1-node-farm/starter/txt/start.txt", "utf-8", (error, data1) => {
       fs.writeFile("./1-node-farm/starter/txt/final.txt", `${data2}\n${data3}`, "utf-8", (error) => {
         if (error) return console.log("ERROR#4 💥");
         console.log("the file has been written 😁");
+        fs.readFile("./1-node-farm/starter/txt/final.txt", "utf-8", (error, data4) => {
+          if (error) return console.log("ERROR#5 💥");
+          console.log(`#4 :${data4}`);
+        });
       });
     });
-    // fs.readFile("./1-node-farm/starter/txt/final.txt", "utf-8", (error, data4) => {
-    //   if (error) return console.log("ERROR#5 💥");
-    //   console.log(`#4 :${data4}`);
-    // });
   });
 });
 console.log("the end of the Line. 🔚");
